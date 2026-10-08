@@ -1,0 +1,6 @@
+1001.jpg,A dog is running in the park
+1001.jpg,A dog playing outdoors
+1002.jpg,A man riding a bike on road
+1002.jpg,A cyclist on street
+1003.jpg,A cat sitting on sofa
+1003.jpg,A cute cat relaxing
