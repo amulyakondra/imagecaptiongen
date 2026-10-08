@@ -9,26 +9,26 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Install Dependencies') {
             steps {
-                bat 'docker build -t image-caption-generator .'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Python Project') {
             steps {
-                bat 'docker run --rm image-caption-generator'
+                bat 'python image_caption_generator.py'
             }
         }
     }
 
     post {
         success {
-            echo 'Image Caption Generator executed successfully!'
+            echo 'Project executed successfully!'
         }
 
         failure {
-            echo 'Build or execution failed.'
+            echo 'Project execution failed!'
         }
     }
 }
