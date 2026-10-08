@@ -11,31 +11,31 @@ pipeline {
 
         stage('Check Python') {
             steps {
-                bat 'python --version'
-                bat 'python -m pip --version'
+                bat "python --version"
+                bat "python -m pip --version"
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat "python -m pip install -r requirements.txt"
             }
         }
 
         stage('Run Python Project') {
             steps {
-                bat python image_caption_generator.py'
+                bat "python image_caption_generator.py"
             }
         }
     }
 
     post {
         success {
-            echo 'Project executed successfully!'
+            echo "Project executed successfully!"
         }
 
         failure {
-            echo 'Project execution failed!'
+            echo "Project execution failed!"
         }
     }
 }
