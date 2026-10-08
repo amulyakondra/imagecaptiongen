@@ -11,20 +11,20 @@ pipeline {
 
         stage('Check Python') {
             steps {
-                bat 'python --version'
-                bat 'python -m pip --version'
+                bat 'py --version'
+                bat 'py -m pip --version'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat 'py -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Python Project') {
             steps {
-                bat 'python image_caption_generator.py'
+                bat py image_caption_generator.py'
             }
         }
     }
